@@ -10,32 +10,36 @@ Software Engineer with experience in API development and integrations.
 
 ##### DEC 2021 - CURRENT
 
-Original developer for a greenfield cloud service project to be
-utilized by multiple medical device hardware projects. The team
-grew by a dozen developers after successful progress demos early on.
-I am the lead engineer and architect of the project, working closely
-with management to define and implement requirements, and attend
-cross team architectural meetings.
+Lead a cloud developemnt team adopting new development workflows, tools, and architectures
+based around microservices.
 
-- Wrote Go and Python web services hosted in AWS
-- Local development utilizes LocalStack and compose
-- Functional and integration tests written in pytest
-- Pipelines written in Gitlab pipelines
-- Responsible for writing stories and planning for full software stack
+- Design and implement new web services hosted in AWS for communication with IoT devices and their data
+- Migrated functionality of monolithic applications to a microservice architecture
+- Adopted use of Localstack and expanded the user of Docker for development
+- Embrace alternatives to manual processes by introducing Gitlab Pipelines and Docker for builds
+- Reduce AWS costs in testing strategies by embracing functional testing, Localstack and Gitlab Pipelines
+
+Web Services
+Automation
+Deployment
+Testing
+
+*Skills*: Go, Python, Docker, Terraform, Gitlab Pipelines, Pytest, Gin, LocalStack, AWS, git
+
 
 #### Software Cloud Engineer
 
 ##### MAR 2019 - 2021
 
-I was brought onto a small (3 dev, 1 QA) team working on cloud services to
-support medical device hardware.
+Part of a small cloud development team that owned a large legacy codebase used to support
+a medical device.
 
-- Design and implement features for Spring Boot web services
-    - Worked on HTTP and MQTT APIs
-    - AWS services used include SNS/SQS, Kinesis, ECS, EC2, S3, IoT
-- Design and implement features for an Android APK
+- Design and implement features for Spring Boot web service
+- Design and implement features for an Android APK client
 - Developed Quality-of-Life and customer requested tools
 - Designed and reimplemented Android automated testing infrastructure
+
+*Skills*: Java, Android, Groovy, Gradle, Spock, AWS, Jenkins, git
 
 ### Oracle, Manchester NH
 
@@ -49,6 +53,8 @@ support medical device hardware.
 - Participate in a 24/7 PagerDuty on-call rotation with strict SLAs
 - Produce and collaborate on technical designs
 
+*Skills*: Go, Python, Java, Pytest, Ansible, Swagger, Jenkins, git, integration w/ Oracle Platform
+
 ### Dyn, Manchester NH
 
 #### Associate Software Engineer
@@ -59,26 +65,12 @@ support medical device hardware.
 - Implemented new features for an asynchronous provisioning & orchestration API
 - Implemented new features for Dyn's DNS management API
 
+*Skills*: Python, Django, Angular, Selenium, MockServer, git
+
 ## Contact
 
 (603) 395-3765
 kylevickers@gmail.com
-
-## Technical Skills
-
-- Go
-- Python
-- Java
-- Docker
-- git
-- REST APIs
-- Swagger
-- Gradle
-- Groovy
-- AWS
-- Jenkins
-- Gitlab Pipelines
-- Terraform
 
 ## Education
 

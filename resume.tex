@@ -1,0 +1,214 @@
+%-------------------------
+% Resume in Latex
+% Author : Kyle Vickers
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://kylevickers.com/}{\Large Kyle Vickers}} & Email : \href{mailto:kylevickers@gmail.com}{kylevickers@gmail.com}\\
+    \href{http://kylevickers.com/}{http://kylevickers.com} & Mobile : \href{tel:(603) 395-3765}{(603) 395-3765} \\
+\end{tabular*}
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {DEKA}{Manchester, NH}
+      {Lead Software Engineer}{Dec 2021 - Present}
+      \resumeItemListStart
+        \resumeItem{Web Services}
+          {Design and implemented web services hosted in AWS for communication with IoT devices and their data. Migrated functionality from monolithic codebases to a decoupled microservice architecture.}
+        \resumeItem{Automation}
+          {Replaced long done manual processes with Gitlab Pipelines and Docker. Migrated from in-house gradle plugins to simple Makefiles with scripts for portability between projects.}
+        \resumeItem{Testing}
+          {Reduced AWS costs during development and testing by using in Localstack and introducing funciontal testing for services. This strategy has been adopted throughout other teams. Used pytest to write functional and integration tests for web services.}
+        \resumeItem{Tech and Skills}
+          {Go, Python, Docker, Terraform, Gitlab Pipelines, Pytest, Gin, Localstack, AWS, git, GitLab}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      {Software Cloud Engineer}{Mar 2019 - Nov 2021}
+      \resumeItemListStart
+        \resumeItem{Web Services}
+          {Implemented features into a monolithic Spring Boot web application. This web application received data from Android clients and delivered binaries.}
+        \resumeItem{Android}
+          {Added Android testing to Jenkins using the Android SDK CLI tools and emulator, replacing a manual Android test process. This enabled us to test our client on different versions of Android in the pipeline.}
+        \resumeItem{Testing}
+          {Wrote unit and integration tests in the Spock test framework.}
+        \resumeItem{Tech and Skills}
+          {Java, Android, Groovy, Gradle, Spock, AWS, Jenkins, git, GitLab}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Oracle}{Manchester, NH}
+      {Software Engineer}{Apr 2017 - Feb 2019}
+      \resumeItemListStart
+        \resumeItem{Public DNS API}
+          {Developed support for Oracle API Specification in Dyn's Public DNS API.}
+        \resumeItem{Integration}
+          {Developed in codebases which needed to be expanded to support both Dyn customers and Oracle customers.}
+        \resumeItem{Libraries}
+          {Maintainer on internal Go client libraries to connect with Oracle services, notably AuthNZ and audit libraries.}
+        \resumeItem{On Call}
+          {Participated in a 24/7 PagerDuty on-call rotation with strict SLAs}
+        \resumeItem{Tech and Skills}
+          {Go, Python, PagerDuty, Java, Spring, Docker, git, BitBucket}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Dyn}{Manchester, NH}
+      {Associate Software Engineer}{Feb 2015 - Apr 2017}
+      \resumeItemListStart
+        \resumeItem{DNS Storefront}
+          {Feature development and bug fixes in an online storefront for self service DNS customers.}
+        \resumeItem{Provisioning and Orchestration API}
+          {Feature development for an internal asynchronous provisioning and orchestration API, using Django and Celery and RabbitMQ. Offered a HTTP API interface where clients could submit long running jobs to be executed asynchronously and check the status of long running jobs.}
+        \resumeItem{Deployment and Configuration}
+          {Dockerized services, which were deployed using Docker Swarm. Also used Chef for host provisioning and wrote Ansible playbooks for application configuration.}
+        \resumeItem{Tech and Skills}
+          {Python, Django, Celery, RabbitMQ, Docker, Chef, Ansible, git, GitHub}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      {Internship}{Sep 2014 - Feb 2015}
+      \resumeItemListStart
+        \resumeItem{Frontend Testing}
+          {Wrote Selenium tests in Pytest for new online storefront application using Angular}
+        \resumeItem{Tech and Skills}
+          {Selenium, Pytest, Angular}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of New Hampshire}{Durham, NH}
+      {Bachelor of Science in Computer Science;  GPA: 3.22}{2010 -- 2015}
+    \resumeSubheading
+      {Great Bay Community College}{Portsmouth, NH}
+      {Associate of Arts in Liberal Arts;  GPA: 3.97}{2008 -- 2010}
+    \resumeSubheading
+      {Seacoast School of Technology}{Exeter, NH}
+      {Certificate in Computer Programming;  High Honors}{2005 -- 2007}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Extras}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Resume}
+      {This resume is updated on my github TODO... fill this out}
+    \resumeSubItem{Programming}
+      {I started programming in the 4th grade with Interplay's Learn to Program Basic boxset from a Scholstic book club. Shortly after I discovered QBasic, and never stopped loving it.}
+    \resumeSubItem{Early Credits}
+      {In the 6th grade I enrolled and completed an Applied Logic course at Great Bay Community College at night to boost my programming hobby.}
+    \resumeSubItem{More Languages}
+      {While I don't have any listed for work experience, the majority of my programming in school was C and C++.}
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+%\section{Programming Skills}
+%  \resumeSubHeadingListStart
+%    \item{
+%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
+%      \hfill
+%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+%    }
+%  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
+
