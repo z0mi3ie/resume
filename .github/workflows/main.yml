@@ -45,8 +45,8 @@ jobs:
           # The working directory for the latex compiler to be invoked
           # working_directory: .
           # LaTeX engine to be used
-          compiler: pdflatex 
+          # compiler: pdflatex 
           # Extra arguments to be passed to the latex compiler
-          args: -jobname=kyle-vickers-resume -output-directory=build -output-format=pdf 
+          # args: -jobname=kyle-vickers-resume -output-directory=build -output-format=pdf 
           # Install extra packages by apt-get
           # extra_system_packages: # optional
