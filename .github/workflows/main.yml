@@ -1,4 +1,4 @@
-name: CI
+name: build-release
 on:
   push:
     branches: [ $default-branch ]
@@ -11,13 +11,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: LaTeX compilation
+      
+      - name: version
+        id: version
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+      - name: compilation
         uses: dante-ev/latex-action@2021-A
         with:
           root_file: resume.tex
           args: -jobname=kyle-vickers-resume -output-format=pdf
-      - name: Archive production artifacts
+      - name: archive
         uses: actions/upload-artifact@v3
         with:
           name: kyle-vickers-resume
           path: kyle-vickers-resume.pdf
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
