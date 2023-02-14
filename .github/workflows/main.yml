@@ -50,3 +50,8 @@ jobs:
           # args: -jobname=kyle-vickers-resume -output-directory=build -output-format=pdf 
           # Install extra packages by apt-get
           # extra_system_packages: # optional
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Publish Resume
+          path: resume.pdf
