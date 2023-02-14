@@ -27,6 +27,12 @@ jobs:
         with:
           name: kyle-vickers-resume
           path: kyle-vickers-resume.pdf
+      - name: generate tag variables
+        id: vars
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: release
         uses: actions/create-release@v1
         id: create_release
@@ -36,7 +42,7 @@ jobs:
           draft: false
           prerelease: false
           release_name: ${{ steps.version.outputs.version }}
-          tag_name: ${{ github.sha }}
+          tag_name: ${{ steps.vars.outputs.sha_short }}
       - name: upload
         uses: actions/upload-release-asset@v1
         env:
