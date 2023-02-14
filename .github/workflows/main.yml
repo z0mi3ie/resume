@@ -29,16 +29,26 @@ jobs:
       - name: version
         id: version
         run: echo "::set-output name=version::$(date +'%Y-%m-%dT%H:%M:%S')"
+        
       - name: compilation
         uses: dante-ev/latex-action@2021-A
         with:
           root_file: resume.tex
           args: -jobname=kyle-vickers-resume -output-format=pdf
+          
+      - name: check permissions
+        id: perm
+        shell: bash
+        run: |
+          ls -al kyle-vickers-resume.pdf
+
+          
       - name: archive
         uses: actions/upload-artifact@v3
         with:
           name: kyle-vickers-resume
           path: kyle-vickers-resume.pdf
+          
       - name: generate tag variables
         id: vars
         shell: bash
