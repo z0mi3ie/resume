@@ -9,8 +9,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
-      #contents: write
+    permissions:
+      contents: read|write
+      actions: read|write
+      checks: read|write
+      deployments: read|write
+      id-token: read|write
+      issues: read|write
+      discussions: read|write
+      packages: read|write
+      pages: read|write
+      pull-requests: read|write
+      repository-projects: read|write
+      security-events: read|write
+      statuses: read|write
     steps:
       - uses: actions/checkout@v3
       
