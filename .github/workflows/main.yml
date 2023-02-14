@@ -15,7 +15,7 @@ jobs:
         uses: dante-ev/latex-action@2021-A
         with:
           root_file: resume.tex
-          args: -jobname=kyle-vickers-resume
+          args: -jobname=kyle-vickers-resume -output-format=pdf
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
