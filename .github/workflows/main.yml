@@ -41,6 +41,8 @@ jobs:
         shell: bash
         run: |
           ls -al kyle-vickers-resume.pdf
+          whoami
+          
 
           
       - name: archive
