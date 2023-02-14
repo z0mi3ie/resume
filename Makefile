@@ -3,6 +3,16 @@ BUILD_DIR := build
 OUTPUT_JOB := kyle-vickers-resume
 OUTPUT_FMT := pdf
 
+.PHONY: build/docker
+build/docker:
+	docker run \
+		--rm \
+		--interactive \
+		--user="$(id -u):$(id -g)" \
+		--volume ${PWD}:/data \
+		blang/latex \
+		make build
+
 .PHONY: build
 build: clean
 	mkdir build
