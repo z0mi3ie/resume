@@ -10,19 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read|write
-      actions: read|write
-      checks: read|write
-      deployments: read|write
-      id-token: read|write
-      issues: read|write
-      discussions: read|write
-      packages: read|write
-      pages: read|write
-      pull-requests: read|write
-      repository-projects: read|write
-      security-events: read|write
-      statuses: read|write
+      contents: write
+      actions: write
+      checks: write
+      deployments: write
+      id-token: write
+      issues: write
+      discussions: write
+      packages: write
+      pages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
     steps:
       - uses: actions/checkout@v3
       
