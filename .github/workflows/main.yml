@@ -24,6 +24,9 @@ jobs:
       security-events: write
       statuses: write
     steps:
+      - name: Use Docker in rootless mode.
+        uses: ScribeMD/rootless-docker@0.2.2
+
       - uses: actions/checkout@v3
 
       - name: version
@@ -56,6 +59,7 @@ jobs:
         run: |
           #echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
       - name: release
         uses: actions/create-release@v1
         id: create_release
@@ -66,10 +70,12 @@ jobs:
           prerelease: false
           release_name: ${{ steps.version.outputs.version }}
           tag_name: ${{ steps.vars.outputs.sha_short }}
+
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
           name: kyle-vickers-resume
+
       - name: upload
         uses: actions/upload-release-asset@v1
         env:
@@ -79,6 +85,7 @@ jobs:
           asset_path: ./kyle-vickers-resume
           asset_name: kyle-vickers-resume.zip
           asset_content_type: application/zip
+
       - name: Upload resume to release
         uses: svenstaro/upload-release-action@v2
         with:
