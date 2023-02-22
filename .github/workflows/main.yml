@@ -45,7 +45,7 @@ jobs:
         run: |
           ls -al kyle-vickers-resume.pdf
           whoami
-          chown runner kyle-vickers-resume.pdf
+          sudo chown runner kyle-vickers-resume.pdf
 
       - name: archive
         uses: actions/upload-artifact@v3
