@@ -1,11 +1,8 @@
 name: build-release
-
 on:
   push:
     tags:
       - '*'
-  # Allows you to run this workflow manually from the Actions tab
-  #workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,15 +29,6 @@ jobs:
         with:
           root_file: resume.tex
           args: -jobname=kyle-vickers-resume -output-format=pdf
-
-      - name: check permissions
-        id: perm
-        shell: bash
-        run: |
-          ls -al kyle-vickers-resume.pdf
-          whoami
-          sudo chown runner kyle-vickers-resume.pdf
-          ls -al kyle-vickers-resume.pdf
 
       - name: archive
         uses: actions/upload-artifact@v3
