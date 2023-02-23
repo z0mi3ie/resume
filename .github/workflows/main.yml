@@ -1,4 +1,5 @@
 name: build-release
+
 on:
   push:
     tags:
@@ -10,19 +11,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
-
-      - name: version
-        id: version
-        run: |
-          echo "version=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
-          echo "${{ env.version }}"
-
-      - name: generate tag variables
-        id: vars
-        shell: bash
-        run: |
-          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-          echo "${{ env.sha_short }}"
 
       - name: compilation
         uses: dante-ev/latex-action@2021-A
@@ -36,9 +24,8 @@ jobs:
           name: kyle-vickers-resume
           path: kyle-vickers-resume.pdf
 
-      - name: Create Release
+      - name: create release
         uses: ncipollo/release-action@v1.12.0
         with:
-          body: "new release action used"
+          body: "A .pdf of the resume is attached to this release."
           artifacts: "kyle-vickers-resume.pdf"
-
