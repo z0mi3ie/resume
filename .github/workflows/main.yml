@@ -24,14 +24,16 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - name: Use Docker in rootless mode.
-        uses: ScribeMD/rootless-docker@0.2.2
-
       - uses: actions/checkout@v3
 
       - name: version
         id: version
-        run: echo "::set-output name=version::$(date +'%Y-%m-%dT%H:%M:%S')"
+        run: echo "version=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_OUTPUT
+
+      - name: generate tag variables
+        id: vars
+        shell: bash
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: compilation
         uses: dante-ev/latex-action@2021-A
@@ -54,12 +56,6 @@ jobs:
           name: kyle-vickers-resume
           path: kyle-vickers-resume.pdf
 
-      - name: generate tag variables
-        id: vars
-        shell: bash
-        run: |
-          #echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: release
         uses: actions/create-release@v1
@@ -69,8 +65,8 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
-          tag_name: ${{ steps.vars.outputs.sha_short }}
+          release_name: ${{ env.version }}
+          tag_name: ${{ env.sha_short }}
 
       - name: Download a single artifact
         uses: actions/download-artifact@v3
