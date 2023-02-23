@@ -28,12 +28,16 @@ jobs:
 
       - name: version
         id: version
-        run: echo "version=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_OUTPUT
+        run: |
+          echo "version=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_OUTPUT
+          echo "${{ env.version }}"
 
       - name: generate tag variables
         id: vars
         shell: bash
-        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+        run: |
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "${{ env.sha_short }}"
 
       - name: compilation
         uses: dante-ev/latex-action@2021-A
