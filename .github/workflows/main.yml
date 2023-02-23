@@ -29,14 +29,14 @@ jobs:
       - name: version
         id: version
         run: |
-          echo "version=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_OUTPUT
+          echo "version=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
           echo "${{ env.version }}"
 
       - name: generate tag variables
         id: vars
         shell: bash
         run: |
-          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
           echo "${{ env.sha_short }}"
 
       - name: compilation
