@@ -64,6 +64,6 @@ jobs:
         uses: ncipollo/release-action@v1.12.0
         with:
           body: "new release action used"
-          tag: ${{ env.version }}
+          tag: $env.version
           commit: $GITHUB_SHA
 
