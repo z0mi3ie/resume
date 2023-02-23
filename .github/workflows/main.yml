@@ -60,17 +60,10 @@ jobs:
           name: kyle-vickers-resume
           path: kyle-vickers-resume.pdf
 
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ env.version }}
-          tag_name: ${{ env.sha_short }}
-
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
+        with:
+          body: "new release action used"
+          tag: "${{ env.version }}"
+          commit: "${{ env.sha_short }}"
 
