@@ -64,5 +64,5 @@ jobs:
         uses: ncipollo/release-action@v1.12.0
         with:
           body: "new release action used"
-          artifacts: "kyle-vickers-resume"
+            #artifacts: "kyle-vickers-resume.pdf"
 

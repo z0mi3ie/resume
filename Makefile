@@ -2,6 +2,10 @@ RESUME_FILE := resume.tex
 BUILD_DIR := build
 OUTPUT_JOB := kyle-vickers-resume
 OUTPUT_FMT := pdf
+VERSION := 0.0.1
+TIMESTAMP := $(shell date +%s)
+TAG := v${VERSION}-${TIMESTAMP}
+BRANCH := main
 
 .PHONY: build/docker
 build/docker:
@@ -25,6 +29,15 @@ build: clean
 .PHONY: open
 open: build
 	open ${BUILD_DIR}/${OUTPUT_JOB}.${OUTPUT_FMT}
+
+.PHONY: tag
+tag:
+	git tag ${TAG}
+
+.PHONY: release
+release: tag
+	git push -u origin ${BRANCH}
+	git push -u origin ${TAG}
 
 .PHONY: clean
 clean:
